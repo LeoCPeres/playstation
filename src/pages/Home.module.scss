@@ -1,0 +1,174 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .heroImage {
+    width: 100%;
+  }
+
+  .topOptions {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+    a {
+      padding: 1rem;
+
+      h5 {
+        font-weight: 600;
+        color: var(--gray);
+        &.active {
+          font-weight: 800;
+          color: var(--white);
+        }
+      }
+    }
+
+    span {
+      font-weight: 600;
+      color: var(--white);
+    }
+  }
+
+  .leftOptions {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .rightOptions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .containerStore {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: -200px;
+    padding: 1rem;
+    width: 90%;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex-direction: row;
+
+      h1 {
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 9pt;
+        border: 1px solid var(--white);
+        padding: 0.3rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: var(--white);
+          color: black;
+        }
+      }
+    }
+
+    .cardsContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.9rem;
+      margin-bottom: 1.9rem;
+
+      .card {
+        width: 370px;
+        height: 128px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.4rem;
+        background-repeat: no-repeat;
+
+        .cardHeader {
+          align-self: flex-start;
+          justify-self: flex-start;
+
+          span {
+            background-color: var(--white);
+            color: var(--black);
+            width: 280px;
+            padding: 0.1rem 0.5rem;
+            border: 1px solid var(--black);
+            border-radius: 4px;
+            font-weight: 600;
+          }
+        }
+
+        .cardBody {
+          flex: 1;
+          display: flex;
+          span {
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--white);
+            align-self: center;
+            justify-self: center;
+            cursor: pointer;
+          }
+        }
+
+        .cardFooter {
+          align-self: flex-end;
+          margin-right: -1.4rem;
+          margin-bottom: -1rem;
+
+          a {
+            text-decoration: none;
+            color: var(--white);
+            background-color: var(--blue);
+            padding: 0.4rem 0.6rem;
+            border-radius: 10px 0px 10px 0px;
+            margin-left: 1rem;
+
+            transition: filter 0.2s;
+          }
+
+          a:hover {
+            filter: drop-shadow(0px 0px 15px #0072ce);
+          }
+
+          span {
+            color: var(--white);
+          }
+        }
+      }
+
+      @media (min-width: 1920px) {
+        .card {
+          width: 555px;
+          height: 192px;
+          background-size: contain;
+
+          .cardBody {
+            span {
+              font-size: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

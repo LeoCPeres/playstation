@@ -1,0 +1,65 @@
+.sonyBar {
+  height: 36px;
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.navBar {
+  height: 64px;
+  background: var(--white);
+
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  justify-content: space-between;
+
+  .content {
+    display: flex;
+    align-items: center;
+
+    padding: 1rem;
+
+    span {
+      color: var(--dark-gray);
+      font-weight: 600;
+      font-size: 14;
+      padding: 0.2rem;
+
+      text-align: center;
+    }
+
+    img {
+      margin: 0 0.8rem;
+      cursor: pointer;
+    }
+
+    .icons {
+      margin-right: 0.8rem;
+      cursor: pointer;
+    }
+
+    .searchBar {
+      display: flex;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 0.5rem;
+      border-radius: 8px;
+
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-left: 5px;
+        color: var(--dark-gray);
+      }
+
+      input::placeholder {
+        color: var(--dark-gray);
+      }
+    }
+  }
+}
