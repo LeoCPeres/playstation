@@ -1,0 +1,113 @@
+.containerNewReleases {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .card {
+    width: 170px;
+
+    border: 1px solid var(--dark-gray);
+    border-radius: 10px;
+    display: flex;
+
+    flex-direction: column;
+
+    .cardHeader {
+      img {
+        width: 169px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+
+    .cardBody {
+      margin: 0.7rem 0.3rem;
+
+      .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      span:first-child {
+        color: var(--white);
+        font-weight: 800;
+        font-size: 14px;
+      }
+
+      span:last-child {
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+        border: 1px solid var(--dark-gray);
+        font-size: 12px;
+      }
+
+      p {
+        margin-bottom: 0.2rem;
+        padding: 0;
+        font-size: 12px;
+      }
+
+      .platform {
+        display: flex;
+        align-items: center;
+
+        span {
+          padding: 0.1rem 0.3rem;
+          border-radius: 4px;
+          border: 1px solid var(--dark-gray);
+          font-size: 12px;
+          font-weight: 300;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+
+    .cardFooter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: var(--white);
+        font-weight: 700;
+        background-color: var(--blue);
+        width: 90%;
+        height: 26px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: filter 0.2s;
+      }
+
+      a:hover {
+        filter: drop-shadow(0px 0px 10px #0072ce);
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .card {
+      width: 220px;
+
+      .cardHeader {
+        img {
+          object-fit: cover;
+          width: 220px;
+          height: 280px;
+          border-radius: 10px;
+        }
+      }
+
+      .cardBody {
+        span {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}

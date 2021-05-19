@@ -64,6 +64,7 @@
       align-items: center;
       width: 100%;
       flex-direction: row;
+      margin-bottom: 1.9rem;
 
       h1 {
         color: var(--white);
@@ -89,7 +90,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-top: 1.9rem;
+
       margin-bottom: 1.9rem;
 
       .card {
@@ -169,6 +170,12 @@
           }
         }
       }
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.4rem;
     }
   }
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GameCard } from "../components/GameCard";
 import styles from "./Home.module.scss";
 
 export default function Home() {
@@ -94,6 +95,99 @@ export default function Home() {
           <h1>New Releases</h1>
 
           <h2>VIEW ALL +</h2>
+        </div>
+
+        <div className={styles.row}>
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+            EAPlay={true}
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1r77.jpg"
+            PSNow={true}
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg"
+            PSPlus={true}
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+        </div>
+        <div className={styles.row}>
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+            PSNow={true}
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
+          <GameCard
+            title="Cyberpunk 2077"
+            subtitle="WB Games / CD Project Red"
+            platform="PS4"
+            price="$59.99"
+            src="/cyberpunk.png"
+          />
         </div>
       </div>
     </div>
