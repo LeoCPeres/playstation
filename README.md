@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div style="text-align: center" align="center">
+<img src="https://i.imgur.com/HQ15dZM.png" align="center" />
+</div>
 
-## Getting Started
+<h1 align="center">NextJS PlayStation Store Concept </h1>
 
-First, run the development server:
+<h3 align="center">PlayStation Store Concept Clone App with NextJS.</h3>
+<div style="text-align: center" align="center">
+<img src="https://i.imgur.com/33gnBx9.png" align="center" />
+</div>
+
+
+<h2>🚀 Tecnologias</h2>
+<p>Este projeto está sendo desenvolvido com o objetivo de aprimorar meus conhecimentos com as seguintes tecnologias:</p>
+
+<ul>
+    <li>NextJS</li>
+    <li>Axios</li>
+    <li>Sass: Syntactically Awesome Style Sheets</li>
+    <li>Typescript</li>
+</ul>
+<p>👉 Figma layout design by Eduardo Fonseca: <a href="https://www.figma.com/community/file/953393220481719617/PlayStation-Store-Concept">PlayStation Store Concept</a> </p>
+
+<h2>ℹ️ Como usar</h2>
+<p>Para clonar e usar esta aplicação, você irá precisar de: <a href="https://git-scm.com/">Git</a>, <a href="https://nodejs.org/en/">Node.js v14.16.1</a> ou mais recente + <a href="https://yarnpkg.com/">Yarn v1.22.5</a> ou mais recente.</p>
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this repository
+$ git clone https://github.com/LeoCPeres/playstation playstation
+
+# Go into the repository
+$ cd playstation
+
+# Install dependencies
+$ yarn install
+
+# Run Web App
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
