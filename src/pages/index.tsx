@@ -1,8 +1,33 @@
 import Link from "next/link";
+import { GetStaticProps } from "next";
 import { GameCard } from "../components/GameCard";
+import { api } from "../services/api";
 import styles from "./Home.module.scss";
 
-export default function Home() {
+type Game = {
+  id: string;
+  title: string;
+  developer: string;
+  platform: string;
+  image_url: string;
+  background_img: string;
+  price: number;
+  PSPlus: boolean;
+  EAPlay: boolean;
+  PSNow: boolean;
+  purchased: boolean;
+  add_on: boolean;
+  discount: number;
+  free_to_play: boolean;
+};
+
+type HomeProps = {
+  games: Game[];
+  gameRow: Game[];
+  gameRow2: Game[];
+};
+
+export default function Home({ games, gameRow, gameRow2 }: HomeProps) {
   return (
     <div className={styles.container}>
       <div className={styles.topOptions}>
@@ -32,6 +57,15 @@ export default function Home() {
 
       <img src="/hero-image.png" alt="" className={styles.heroImage} />
       <div className={styles.containerStore}>
+        <div className={styles.slider}>
+          <div className={styles.gameTitleSlider}>
+            <img src="/gameTitle.png" alt="" />
+          </div>
+          <div className={styles.gamePropsSlider}>
+            <span>PS5</span> <br />
+            <a href="/">$49.99</a>
+          </div>
+        </div>
         <div className={styles.title}>
           <h1>Trending</h1>
 
@@ -98,98 +132,82 @@ export default function Home() {
         </div>
 
         <div className={styles.row}>
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-            EAPlay={true}
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1r77.jpg"
-            PSNow={true}
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg"
-            PSPlus={true}
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
+          {gameRow.map((game) => {
+            return (
+              <GameCard
+                id={game.id}
+                title={game.title}
+                subtitle={game.developer}
+                platform={game.platform}
+                price={game.price}
+                src={game.image_url}
+                EAPlay={game.EAPlay}
+                PSNow={game.PSNow}
+                PSPlus={game.PSPlus}
+                add_on={game.add_on}
+                discount={game.discount}
+                free_to_play={game.free_to_play}
+                purchased={game.purchased}
+              />
+            );
+          })}
         </div>
         <div className={styles.row}>
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-            PSNow={true}
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
-          <GameCard
-            title="Cyberpunk 2077"
-            subtitle="WB Games / CD Project Red"
-            platform="PS4"
-            price="$59.99"
-            src="/cyberpunk.png"
-          />
+          {gameRow2.map((game) => {
+            return (
+              <GameCard
+                id={game.id}
+                title={game.title}
+                subtitle={game.developer}
+                platform={game.platform}
+                price={game.price}
+                src={game.image_url}
+                EAPlay={game.EAPlay}
+                PSNow={game.PSNow}
+                PSPlus={game.PSPlus}
+                add_on={game.add_on}
+                discount={game.discount}
+                free_to_play={game.free_to_play}
+                purchased={game.purchased}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await api.get("games", {});
+
+  const games = data.map((game) => {
+    return {
+      id: game.id,
+      title: game.title,
+      developer: game.developer,
+      platform: game.platform,
+      image_url: game.image_url,
+      price: game.price,
+      PSPlus: game.PSPlus,
+      EAPlay: game.EAPlay,
+      PSNow: game.PSNow,
+      purchased: game.purchased,
+      add_on: game.add_on,
+      discount: game.discount,
+      free_to_play: game.free_to_play,
+    };
+  });
+
+  const gameRow = games.slice(0, 6);
+  const gameRow2 = games.slice(7, 13);
+
+  return {
+    props: {
+      games,
+      gameRow,
+      gameRow2,
+    },
+    revalidate: 60 * 60 * 8,
+  };
+};

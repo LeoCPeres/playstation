@@ -5,7 +5,7 @@
   justify-content: space-between;
 
   .card {
-    width: 170px;
+    width: 180px;
 
     border: 1px solid var(--dark-gray);
     border-radius: 10px;
@@ -15,7 +15,7 @@
 
     .cardHeader {
       img {
-        width: 169px;
+        width: 179px;
         height: 220px;
         object-fit: cover;
         border-radius: 10px;
@@ -31,10 +31,16 @@
         justify-content: center;
       }
 
-      span:first-child {
+      .title {
+        text-overflow: ellipsis;
+        max-width: 97%;
         color: var(--white);
         font-weight: 800;
         font-size: 14px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       span:last-child {
@@ -62,6 +68,14 @@
           font-weight: 300;
           margin-right: 0.4rem;
         }
+        .addOn {
+          padding: 0.1rem 0.3rem;
+          border-radius: 4px;
+          border: 1px solid var(--dark-gray);
+          font-size: 12px;
+          font-weight: 300;
+          margin-right: 0.4rem;
+        }
       }
     }
 
@@ -73,11 +87,11 @@
 
       a {
         color: var(--white);
-        font-weight: 700;
+        font-weight: 600;
         background-color: var(--blue);
         width: 90%;
         height: 26px;
-        border-radius: 10px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -86,6 +100,62 @@
 
       a:hover {
         filter: drop-shadow(0px 0px 10px #0072ce);
+      }
+
+      .priceAditional {
+        span {
+          &:first-child {
+            text-decoration: line-through;
+            color: var(--gray);
+          }
+
+          &:last-child {
+            margin-left: 0.5rem;
+            padding-left: 0.5rem;
+            position: relative;
+            color: #fdd635;
+
+            &::before {
+              content: "";
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: var(--gray);
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+
+      .priceAditionalPSNow {
+        span {
+          &:first-child {
+            text-decoration: line-through;
+            color: var(--gray);
+          }
+
+          &:last-child {
+            margin-left: 0.5rem;
+            padding-left: 0.5rem;
+            position: relative;
+            color: var(--white);
+
+            &::before {
+              content: "";
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: var(--gray);
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
       }
     }
   }

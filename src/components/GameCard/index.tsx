@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./styles.module.scss";
 
 type GameCardProps = {
@@ -5,13 +6,27 @@ type GameCardProps = {
   src: string;
   subtitle: string;
   platform: string;
-  price: string;
+  price: number;
   EAPlay?: boolean;
   PSPlus?: boolean;
   PSNow?: boolean;
+  free_to_play?: boolean;
+  add_on?: boolean;
+  discount?: number;
+  purchased?: boolean;
+  id: string;
 };
 
 export function GameCard(props: GameCardProps) {
+  const [hasAnormalPrice, setHasAnormalPrice] = useState(false);
+
+  function anormalPrice() {
+    if (props.PSPlus || props.PSNow || props.purchased === true) {
+      setHasAnormalPrice(true);
+    }
+    anormalPrice();
+  }
+
   return (
     <div className={styles.containerNewReleases}>
       <div className={styles.card}>
@@ -19,7 +34,7 @@ export function GameCard(props: GameCardProps) {
           <img src={props.src} alt="" />
         </div>
         <div className={styles.cardBody}>
-          <span>{props.title}</span>
+          <p className={styles.title}>{props.title}</p>
           <p>{props.subtitle}</p>
 
           <div className={styles.platform}>
@@ -27,10 +42,44 @@ export function GameCard(props: GameCardProps) {
             {props.EAPlay ? <img src="/EAPlay.png" alt="" /> : ""}
             {props.PSPlus ? <img src="/PS+.png" alt="" /> : ""}
             {props.PSNow ? <img src="/PSNow.png" alt="" /> : ""}
+            {props.add_on ? <span className={styles.addOn}>Add-on</span> : ""}
           </div>
         </div>
         <div className={styles.cardFooter}>
-          <a href="/">{props.price}</a>
+          {props.purchased ? (
+            <a href="">
+              <span>PURSHASED</span>
+            </a>
+          ) : (
+            ""
+          )}
+
+          {props.PSPlus ? (
+            <a href="">
+              <div className={styles.priceAditional}>
+                <span>${props.price}</span>
+                <span style={{ fontWeight: "bold" }}>FREE</span>
+              </div>
+            </a>
+          ) : (
+            ""
+          )}
+
+          {props.PSNow ? (
+            <a href="">
+              <div className={styles.priceAditionalPSNow}>
+                <span>${props.price}</span>
+                <span style={{ fontWeight: "bold" }}>FREE</span>
+              </div>
+            </a>
+          ) : (
+            ""
+          )}
+
+          {props.price > 0 &&
+            props.purchased === false &&
+            props.PSPlus === false &&
+            props.PSNow === false && <a href="">${props.price}</a>}
         </div>
       </div>
     </div>
