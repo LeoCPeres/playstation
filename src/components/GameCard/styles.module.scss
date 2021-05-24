@@ -14,11 +14,23 @@
     flex-direction: column;
 
     .cardHeader {
+      display: flex;
+
       img {
         width: 179px;
         height: 220px;
         object-fit: cover;
         border-radius: 10px;
+      }
+
+      span {
+        color: var(--white);
+        font-weight: 700;
+        position: absolute;
+        padding: 0rem 0.15rem;
+        border: 1px solid var(--white);
+        margin-left: 130px;
+        margin-top: 190px;
       }
     }
 
@@ -43,16 +55,21 @@
         text-overflow: ellipsis;
       }
 
+      .subtitle {
+        text-overflow: ellipsis;
+        max-width: 97%;
+        margin-bottom: 0.5rem;
+        padding: 0;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       span:last-child {
         padding: 0.1rem 0.3rem;
         border-radius: 4px;
         border: 1px solid var(--dark-gray);
-        font-size: 12px;
-      }
-
-      p {
-        margin-bottom: 0.2rem;
-        padding: 0;
         font-size: 12px;
       }
 

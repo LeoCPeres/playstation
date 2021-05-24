@@ -23,158 +23,294 @@ type Game = {
 
 type HomeProps = {
   games: Game[];
-  gameRow: Game[];
-  gameRow2: Game[];
+  gamesNewReleases: Game[];
+  gamesNewReleases2: Game[];
+  gamesComingSoon: Game[];
+  gamesWithDiscount: Game[];
+  gamesFreeToPlay: Game[];
 };
 
-export default function Home({ games, gameRow, gameRow2 }: HomeProps) {
+export default function Home({
+  gamesWithDiscount,
+  gamesNewReleases,
+  gamesNewReleases2,
+  gamesComingSoon,
+  gamesFreeToPlay,
+}: HomeProps) {
   return (
-    <div className={styles.container}>
-      <div className={styles.topOptions}>
-        <div className={styles.leftOptions}>
-          <a href="#">
-            <h5 className={styles.active}>DISCOVER</h5>
-          </a>
-          <span>|</span>
-          <a href="#">
-            <h5>EXPLORE</h5>
-          </a>
+    <>
+      <div className={styles.container}>
+        <div className={styles.topOptions}>
+          <div className={styles.leftOptions}>
+            <a href="#">
+              <h5 className={styles.active}>DISCOVER</h5>
+            </a>
+            <span>|</span>
+            <a href="#">
+              <h5>EXPLORE</h5>
+            </a>
+          </div>
+          <div className={styles.rightOptions}>
+            <a href="#">
+              <h5>COLLECTIONS</h5>
+            </a>
+            <span>|</span>
+            <a href="#">
+              <h5>DEALS</h5>
+            </a>
+            <span>|</span>
+            <a href="#">
+              <h5>SUBSCRIPTIONS</h5>
+            </a>
+          </div>
         </div>
-        <div className={styles.rightOptions}>
-          <a href="#">
-            <h5>COLLECTIONS</h5>
-          </a>
-          <span>|</span>
-          <a href="#">
-            <h5>DEALS</h5>
-          </a>
-          <span>|</span>
-          <a href="#">
-            <h5>SUBSCRIPTIONS</h5>
-          </a>
+
+        <img src="/hero-image.png" alt="" className={styles.heroImage} />
+        <div className={styles.containerStore}>
+          <div className={styles.slider}>
+            <div className={styles.gameTitleSlider}>
+              <img src="/gameTitle.png" alt="" />
+            </div>
+            <div className={styles.gamePropsSlider}>
+              <span>PS5</span> <br />
+              <a href="/">$49.99</a>
+            </div>
+          </div>
+          <div className={styles.title}>
+            <h1>Trending</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+
+          <div className={styles.cardsContainer}>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/fallguys.png')` }}
+            >
+              <div className={styles.cardHeader}>
+                <span>PS4</span>
+              </div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>Fall Guys: Ultimate Knockout</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}>
+                <span>$19.99</span>
+                <a href="/">Add To Cart</a>
+              </div>
+            </div>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/playstation.png')` }}
+            >
+              <div className={styles.cardHeader}>
+                <span>PS5</span>
+              </div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>Deamon's Souls</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}>
+                <span>$69.99</span>
+                <a href="/">Add To Cart</a>
+              </div>
+            </div>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/COD.png')` }}
+            >
+              <div className={styles.cardHeader}>
+                <span>PS4</span>
+              </div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>Call of Duty®: Black Ops Cold War</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}>
+                <span>$59.99</span>
+                <a href="/">Add To Cart</a>
+              </div>
+            </div>
+          </div>
+          <div className={styles.title}>
+            <h1>New Releases</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+
+          <div className={styles.row}>
+            {gamesNewReleases.map((game) => {
+              return (
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  subtitle={game.developer}
+                  platform={game.platform}
+                  price={game.price}
+                  src={game.image_url}
+                  EAPlay={game.EAPlay}
+                  PSNow={game.PSNow}
+                  PSPlus={game.PSPlus}
+                  add_on={game.add_on}
+                  discount={game.discount}
+                  free_to_play={game.free_to_play}
+                  purchased={game.purchased}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.row}>
+            {gamesNewReleases2.map((game) => {
+              return (
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  subtitle={game.developer}
+                  platform={game.platform}
+                  price={game.price}
+                  src={game.image_url}
+                  EAPlay={game.EAPlay}
+                  PSNow={game.PSNow}
+                  PSPlus={game.PSPlus}
+                  add_on={game.add_on}
+                  discount={game.discount}
+                  free_to_play={game.free_to_play}
+                  purchased={game.purchased}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      <img src="/hero-image.png" alt="" className={styles.heroImage} />
-      <div className={styles.containerStore}>
-        <div className={styles.slider}>
-          <div className={styles.gameTitleSlider}>
-            <img src="/gameTitle.png" alt="" />
-          </div>
-          <div className={styles.gamePropsSlider}>
-            <span>PS5</span> <br />
-            <a href="/">$49.99</a>
-          </div>
+      <div className={styles.psnowPubli}>
+        <div className={styles.psnowContainer}>
+          <img src="/PSNow-logo.png" alt="" />
+          <h3>Hundreds of incredible games on demand, what will play first?</h3>
+          <a href="#">LEARN MORE</a>
         </div>
-        <div className={styles.title}>
-          <h1>Trending</h1>
+        <img src="/tlou-psnow.png" alt="" />
+      </div>
 
-          <h2>VIEW ALL +</h2>
-        </div>
+      <div className={styles.container}>
+        <div className={styles.containerComingSoon}>
+          <div className={styles.title}>
+            <h1>Coming Soon</h1>
 
-        <div className={styles.cardsContainer}>
-          <div
-            className={styles.card}
-            style={{ backgroundImage: `url('/fallguys.png')` }}
-          >
-            <div className={styles.cardHeader}>
-              <span>PS4</span>
-            </div>
-            <div className={styles.cardBody}>
-              <Link href="/">
-                <span>Fall Guys: Ultimate Knockout</span>
-              </Link>
-            </div>
-            <div className={styles.cardFooter}>
-              <span>$19.99</span>
-              <a href="/">Add To Cart</a>
-            </div>
+            <h2>VIEW ALL +</h2>
           </div>
-          <div
-            className={styles.card}
-            style={{ backgroundImage: `url('/playstation.png')` }}
-          >
-            <div className={styles.cardHeader}>
-              <span>PS5</span>
-            </div>
-            <div className={styles.cardBody}>
-              <Link href="/">
-                <span>Deamon's Souls</span>
-              </Link>
-            </div>
-            <div className={styles.cardFooter}>
-              <span>$69.99</span>
-              <a href="/">Add To Cart</a>
-            </div>
-          </div>
-          <div
-            className={styles.card}
-            style={{ backgroundImage: `url('/COD.png')` }}
-          >
-            <div className={styles.cardHeader}>
-              <span>PS4</span>
-            </div>
-            <div className={styles.cardBody}>
-              <Link href="/">
-                <span>Call of Duty®: Black Ops Cold War</span>
-              </Link>
-            </div>
-            <div className={styles.cardFooter}>
-              <span>$59.99</span>
-              <a href="/">Add To Cart</a>
-            </div>
-          </div>
-        </div>
-        <div className={styles.title}>
-          <h1>New Releases</h1>
 
-          <h2>VIEW ALL +</h2>
-        </div>
+          <div className={styles.row}>
+            {gamesComingSoon.map((game) => {
+              return (
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  subtitle={game.developer}
+                  platform={game.platform}
+                  price={game.price}
+                  src={game.image_url}
+                  EAPlay={game.EAPlay}
+                  PSNow={game.PSNow}
+                  PSPlus={game.PSPlus}
+                  add_on={game.add_on}
+                  discount={game.discount}
+                  free_to_play={game.free_to_play}
+                  purchased={game.purchased}
+                />
+              );
+            })}
+          </div>
 
-        <div className={styles.row}>
-          {gameRow.map((game) => {
-            return (
-              <GameCard
-                id={game.id}
-                title={game.title}
-                subtitle={game.developer}
-                platform={game.platform}
-                price={game.price}
-                src={game.image_url}
-                EAPlay={game.EAPlay}
-                PSNow={game.PSNow}
-                PSPlus={game.PSPlus}
-                add_on={game.add_on}
-                discount={game.discount}
-                free_to_play={game.free_to_play}
-                purchased={game.purchased}
-              />
-            );
-          })}
+          <div className={styles.title}>
+            <h1>Sales & Deals</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+
+          <div className={styles.row}>
+            {gamesWithDiscount.map((game) => {
+              return (
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  subtitle={game.developer}
+                  platform={game.platform}
+                  price={game.price}
+                  src={game.image_url}
+                  EAPlay={game.EAPlay}
+                  PSNow={game.PSNow}
+                  PSPlus={game.PSPlus}
+                  add_on={game.add_on}
+                  discount={game.discount}
+                  free_to_play={game.free_to_play}
+                  purchased={game.purchased}
+                />
+              );
+            })}
+          </div>
+
+          <div className={styles.title}>
+            <h1>Free To Play</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+
+          <div className={styles.row}>
+            {gamesFreeToPlay.map((game) => {
+              return (
+                <GameCard
+                  id={game.id}
+                  title={game.title}
+                  subtitle={game.developer}
+                  platform={game.platform}
+                  price={game.price}
+                  src={game.image_url}
+                  EAPlay={game.EAPlay}
+                  PSNow={game.PSNow}
+                  PSPlus={game.PSPlus}
+                  add_on={game.add_on}
+                  discount={game.discount}
+                  free_to_play={game.free_to_play}
+                  purchased={game.purchased}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className={styles.row}>
-          {gameRow2.map((game) => {
-            return (
-              <GameCard
-                id={game.id}
-                title={game.title}
-                subtitle={game.developer}
-                platform={game.platform}
-                price={game.price}
-                src={game.image_url}
-                EAPlay={game.EAPlay}
-                PSNow={game.PSNow}
-                PSPlus={game.PSPlus}
-                add_on={game.add_on}
-                discount={game.discount}
-                free_to_play={game.free_to_play}
-                purchased={game.purchased}
-              />
-            );
-          })}
+        <div className={styles.psplusPubli}>
+          <div className={styles.psplusContainer}>
+            <img src="/psplus-banner-logo.png" alt="" />
+            <span>
+              Enhance your PlayStation experience with access to online
+              multiplayer, monthly games, exclusive discounts and more.
+            </span>
+            <a href="#">LEARN MORE</a>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className={styles.container}>
+        <div className={styles.containerComingSoon}>
+          <div className={styles.title}>
+            <h1>Collections</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+          <div className={styles.title}>
+            <h1>Genres</h1>
+
+            <h2>VIEW ALL +</h2>
+          </div>
+          <div className={styles.title}>
+            <h1>More</h1>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -199,14 +335,21 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   });
 
-  const gameRow = games.slice(0, 6);
-  const gameRow2 = games.slice(7, 13);
+  const gamesNewReleases = games.slice(0, 6);
+  const gamesNewReleases2 = games.slice(6, 12);
+
+  const gamesComingSoon = games.slice(12, 18);
+  const gamesWithDiscount = games.slice(18, 24);
+  const gamesFreeToPlay = games.slice(24, 30);
 
   return {
     props: {
       games,
-      gameRow,
-      gameRow2,
+      gamesNewReleases,
+      gamesNewReleases2,
+      gamesComingSoon,
+      gamesWithDiscount,
+      gamesFreeToPlay,
     },
     revalidate: 60 * 60 * 8,
   };

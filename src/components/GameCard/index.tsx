@@ -18,24 +18,16 @@ type GameCardProps = {
 };
 
 export function GameCard(props: GameCardProps) {
-  const [hasAnormalPrice, setHasAnormalPrice] = useState(false);
-
-  function anormalPrice() {
-    if (props.PSPlus || props.PSNow || props.purchased === true) {
-      setHasAnormalPrice(true);
-    }
-    anormalPrice();
-  }
-
   return (
     <div className={styles.containerNewReleases}>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
+          {props.discount > 0 && <span>-{props.discount}%</span>}
           <img src={props.src} alt="" />
         </div>
         <div className={styles.cardBody}>
           <p className={styles.title}>{props.title}</p>
-          <p>{props.subtitle}</p>
+          <p className={styles.subtitle}>{props.subtitle}</p>
 
           <div className={styles.platform}>
             <span>{props.platform}</span>
@@ -80,6 +72,8 @@ export function GameCard(props: GameCardProps) {
             props.purchased === false &&
             props.PSPlus === false &&
             props.PSNow === false && <a href="">${props.price}</a>}
+
+          {props.price == 0 && <a href="">DOWNLOAD</a>}
         </div>
       </div>
     </div>

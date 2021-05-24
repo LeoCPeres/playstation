@@ -3,6 +3,12 @@
   flex-direction: column;
   align-items: center;
 
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+  }
+
   a {
     text-decoration: none;
   }
@@ -119,6 +125,7 @@
         &:hover {
           background-color: var(--white);
           color: black;
+          filter: drop-shadow(0px 0px 5px #fff);
         }
       }
     }
@@ -183,10 +190,10 @@
             margin-left: 1rem;
 
             transition: filter 0.2s;
-          }
 
-          a:hover {
-            filter: drop-shadow(0px 0px 15px #0072ce);
+            &:hover {
+              filter: drop-shadow(0px 0px 15px #0072ce);
+            }
           }
 
           span {
@@ -209,11 +216,151 @@
         }
       }
     }
+  }
 
-    .row {
+  .containerComingSoon {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+
+    .title {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1.4rem;
+      align-items: center;
+      width: 100%;
+      flex-direction: row;
+      margin-bottom: 1.9rem;
+
+      h1 {
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 9pt;
+        border: 1px solid var(--white);
+        padding: 0.3rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: var(--white);
+          color: black;
+          filter: drop-shadow(0px 0px 5px #fff);
+        }
+      }
+    }
+  }
+}
+
+.psnowPubli {
+  display: flex;
+  background-image: url("/mask-background.png");
+  background-repeat: repeat-x;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  img {
+    margin-top: -2rem;
+  }
+
+  .psnowContainer {
+    display: flex;
+    margin-right: 7rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    h3 {
+      margin-top: 1rem;
+      width: 75%;
+      text-align: center;
+      color: var(--white);
+    }
+
+    a {
+      margin-top: 2rem;
+      width: 130px;
+      height: 33px;
+      background-color: var(--dark-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 16px;
+
+      border: 1px solid var(--blue);
+      border-radius: 2px;
+
+      transition: 0.2s;
+
+      &:hover {
+        background-color: var(--blue);
+        filter: drop-shadow(0px 0px 15px #0072ce);
+      }
+    }
+  }
+}
+
+.psplusPubli {
+  display: flex;
+  background-image: url("/psplus-banner-background.png");
+  background-repeat: repeat-x;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 450px;
+
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  .psplusContainer {
+    display: flex;
+    margin-right: 7rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: 30rem;
+
+    span {
+      margin-top: 1rem;
+      width: 70%;
+      text-align: center;
+      color: var(--white);
+    }
+
+    a {
+      margin-top: 2rem;
+      width: 130px;
+      height: 33px;
+      background-color: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 16px;
+
+      border: 1px solid var(--yellow);
+      border-radius: 2px;
+
+      transition: 0.2s;
+
+      &:hover {
+        filter: drop-shadow(0px 0px 15px #fdd635);
+      }
     }
   }
 }

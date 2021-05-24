@@ -9,6 +9,10 @@
 <img src="https://i.imgur.com/33gnBx9.png" align="center" />
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 409b8f77ec4c569577665acda95651652ea50f2d
 <h2>🚀 Tecnologias</h2>
 <p>Este projeto está sendo desenvolvido com o objetivo de aprimorar meus conhecimentos com as seguintes tecnologias:</p>
 
@@ -26,6 +30,7 @@
 ```bash
 # Clone this repository
 $ git clone https://github.com/LeoCPeres/playstation playstation
+<<<<<<< HEAD
 
 # Go into the repository
 $ cd playstation
@@ -36,3 +41,16 @@ $ yarn install
 # Run Web App
 $ yarn dev
 ```
+=======
+
+# Go into the repository
+$ cd playstation
+
+# Install dependencies
+$ yarn install
+
+# Run Web App
+$ yarn dev
+```
+
+>>>>>>> 409b8f77ec4c569577665acda95651652ea50f2d
