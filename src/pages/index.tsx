@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { GameCard } from "../components/GameCard";
+import { SquareCard } from "../components/SquareCard";
 import { api } from "../services/api";
 import styles from "./Home.module.scss";
 
@@ -231,6 +232,38 @@ export default function Home({
             <h2>VIEW ALL +</h2>
           </div>
 
+          <div className={styles.dealsCards}>
+            <div
+              className={styles.card}
+              style={{
+                backgroundImage: `url('/playstation-studios-background.png')`,
+              }}
+            >
+              <img src="/playstation-studios.png" alt="" />
+              <span>PLAYSTATION STUDIOS SUPER SALE</span>
+            </div>
+            <div className={styles.cardMiddle}>
+              <div className={styles.cardHeader}>
+                <span>GAMES UNDER</span>
+              </div>
+              <div className={styles.cardBody}>
+                <span>$20</span>
+              </div>
+              <div className={styles.cardFooter}>
+                <span>ENDS 12/02</span>
+              </div>
+            </div>
+            <div
+              className={styles.card}
+              style={{
+                backgroundImage: `url('/capcom-background.png')`,
+              }}
+            >
+              <img src="/capcom-logo.png" alt="" />
+              <span>UP TO 40%</span>
+            </div>
+          </div>
+
           <div className={styles.row}>
             {gamesWithDiscount.map((game) => {
               return (
@@ -290,6 +323,7 @@ export default function Home({
             </span>
             <a href="#">LEARN MORE</a>
           </div>
+          <img src="/games-psplus-publi.png" alt="" />
         </div>
       </div>
 
@@ -300,10 +334,37 @@ export default function Home({
 
             <h2>VIEW ALL +</h2>
           </div>
+          <div className={styles.squareCardContainer}>
+            <div className={styles.bigSquareCard}>
+              <img src="/ps-indies.png" alt="" />
+            </div>
+            <SquareCard src="/editors-choice.png" />
+            <SquareCard src="/super-heroes.png" />
+            <SquareCard src="/ps-vr.png" />
+            <SquareCard src="/essentials.png" />
+          </div>
+
           <div className={styles.title}>
             <h1>Genres</h1>
 
             <h2>VIEW ALL +</h2>
+          </div>
+
+          <div className={styles.squareCardContainer}>
+            <SquareCard src="/action.png" />
+            <SquareCard src="/arcade.png" />
+            <SquareCard src="/fighting.png" />
+            <SquareCard src="/horror.png" />
+            <SquareCard src="/kids.png" />
+            <SquareCard src="/party.png" />
+          </div>
+          <div className={styles.squareCardContainer}>
+            <SquareCard src="/platform.png" />
+            <SquareCard src="/driving.png" />
+            <SquareCard src="/rpg.png" />
+            <SquareCard src="/shooter.png" />
+            <SquareCard src="/simulation.png" />
+            <SquareCard src="/sports.png" />
           </div>
           <div className={styles.title}>
             <h1>More</h1>

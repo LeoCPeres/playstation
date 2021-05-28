@@ -226,6 +226,45 @@
     padding: 1rem;
     width: 90%;
 
+    .squareCardContainer {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .bigSquareCard {
+        width: 370px;
+        height: 170px;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+
+        transition: 0.2s;
+
+        &:hover {
+          filter: drop-shadow(0px 0px 5px #fff);
+        }
+      }
+
+      @media (min-width: 1920px) {
+        .bigSquareCard {
+          width: 555px;
+          height: 255px;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
     .title {
       display: flex;
       justify-content: space-between;
@@ -250,6 +289,103 @@
           background-color: var(--white);
           color: black;
           filter: drop-shadow(0px 0px 5px #fff);
+        }
+      }
+    }
+  }
+
+  .dealsCards {
+    display: flex;
+
+    margin-bottom: 2rem;
+
+    .cardMiddle {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background-size: cover;
+      height: 200px;
+      border-radius: 10px;
+      background-color: var(--white);
+      cursor: pointer;
+
+      .cardHeader {
+        color: var(--white);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--blue);
+        padding: 0.7rem;
+        font-size: 20px;
+        border-radius: 10px 10px 0 0;
+        justify-self: flex-start;
+        height: 70%;
+      }
+
+      .cardBody {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150%;
+        font-size: 80px;
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .cardFooter {
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 10px 10px;
+        background-color: var(--blue);
+        color: var(--white);
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+
+    .card {
+      width: 370px;
+      background-size: cover;
+      height: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:first-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        margin-right: 2rem;
+
+        span {
+          margin-left: 1rem;
+          color: var(--white);
+          font-weight: 800;
+          font-size: 18px;
+          width: 30%;
+        }
+      }
+
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2rem;
+
+        span {
+          color: var(--yellow);
+          font-size: 18px;
+          font-weight: 800;
+
+          margin-top: 3rem;
         }
       }
     }
@@ -317,7 +453,7 @@
   background-image: url("/psplus-banner-background.png");
   background-repeat: repeat-x;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
   height: 450px;
 
@@ -326,11 +462,10 @@
 
   .psplusContainer {
     display: flex;
-    margin-right: 7rem;
+
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: column;
-    margin-right: 30rem;
 
     span {
       margin-top: 1rem;

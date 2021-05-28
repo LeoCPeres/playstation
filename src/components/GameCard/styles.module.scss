@@ -179,20 +179,24 @@
 
   @media (min-width: 1920px) {
     .card {
-      width: 220px;
+      width: 250px;
 
       .cardHeader {
         img {
           object-fit: cover;
-          width: 220px;
+          width: 250px;
           height: 280px;
           border-radius: 10px;
         }
       }
 
       .cardBody {
-        span {
-          font-size: 26px;
+        .title {
+          font-size: 18px;
+        }
+
+        .subtitle {
+          font-size: 18px;
         }
       }
     }
