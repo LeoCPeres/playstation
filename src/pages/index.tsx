@@ -4,6 +4,7 @@ import { GameCard } from "../components/GameCard";
 import { SquareCard } from "../components/SquareCard";
 import { api } from "../services/api";
 import styles from "./Home.module.scss";
+import { Footer } from "../components/Footer";
 
 type Game = {
   id: string;
@@ -369,8 +370,49 @@ export default function Home({
           <div className={styles.title}>
             <h1>More</h1>
           </div>
+
+          <div className={styles.cardsContainer}>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/addons.png')` }}
+            >
+              <div className={styles.cardHeader}></div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>ADD-ONS</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}></div>
+            </div>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/psvr.png')` }}
+            >
+              <div className={styles.cardHeader}></div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>PS VR</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}></div>
+            </div>
+            <div
+              className={styles.card}
+              style={{ backgroundImage: `url('/ps2classics.png')` }}
+            >
+              <div className={styles.cardHeader}></div>
+              <div className={styles.cardBody}>
+                <Link href="/">
+                  <span>PS2 CLASSICS</span>
+                </Link>
+              </div>
+              <div className={styles.cardFooter}></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
